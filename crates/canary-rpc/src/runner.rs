@@ -525,7 +525,7 @@ mod tests {
         }));
 
         let assertion = &fixture.assertions[0];
-        
+
         let match_response = json!({ "history": ["a", "b", "c"] });
         assert!(assertion.check(&match_response).is_ok());
 
