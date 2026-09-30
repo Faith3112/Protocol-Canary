@@ -532,6 +532,9 @@ mod tests {
         let runner = DefaultRpcRunner::new(HttpRpcClient::new(server.uri()));
         let result = runner.run(&fixture, &context()).await.unwrap();
         assert_eq!(result.status, Status::Fail);
-        assert!(result.details.unwrap().contains("expected field \"friendbotUrl\" to be absent, but it was present"));
+        assert!(result
+            .details
+            .unwrap()
+            .contains("expected field \"friendbotUrl\" to be absent, but it was present"));
     }
 }
